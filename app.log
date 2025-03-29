@@ -1,0 +1,430 @@
+2025-03-29 15:11:38 - __main__ - INFO - Application starting
+2025-03-29 15:11:39 - __main__ - INFO - Initializing TallyPrimeConnectApp
+2025-03-29 15:11:39 - utils.database - INFO - Initializing database at: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-03-29 15:11:39 - utils.database - ERROR - SQLite OperationalError: duplicate column name: description. SQL: ALTER TABLE companies ADD COLUMN description TEXT...
+2025-03-29 15:11:39 - utils.database - ERROR - SQLite OperationalError: duplicate column name: is_active. SQL: ALTER TABLE companies ADD COLUMN is_active BOOLEAN DEFAULT 1 NOT NULL...
+2025-03-29 15:11:39 - utils.database - INFO - Database initialization check complete.
+2025-03-29 15:11:39 - __main__ - ERROR - Error loading logo: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\app.py", line 101, in _load_logo
+    img = Image.open(logo_path).resize(size, Image.Resampling.LANCZOS)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\.venv\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+2025-03-29 15:11:39 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:11:40 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:11:40 - __main__ - INFO - Application initialized successfully
+2025-03-29 15:11:40 - __main__ - INFO - Starting application main loop
+2025-03-29 15:11:42 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9000...
+2025-03-29 15:11:48 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:11:48 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:11:48 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:11:48 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:11:48 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:11:51 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:11:51 - ui.my_companies - INFO - Refreshing My Companies list
+2025-03-29 15:11:51 - ui.my_companies - INFO - Displaying 5 active companies.
+2025-03-29 15:11:52 - ui.my_companies - INFO - Opening edit popup for company: 100003
+2025-03-29 15:12:02 - ui.my_companies - INFO - Attempting to save edits for company: 100003
+2025-03-29 15:12:02 - utils.database - INFO - No changes detected for company 100003.
+2025-03-29 15:12:02 - ui.my_companies - WARNING - Failed to update company 100003 (check logs for reason).
+2025-03-29 15:12:06 - ui.my_companies - INFO - Opening delete confirmation for company: 100003 ('Dfadfadfsadfads')
+2025-03-29 15:12:10 - ui.my_companies - INFO - Opening delete confirmation for company: 100003 ('Dfadfadfsadfads')
+2025-03-29 15:12:14 - __main__ - INFO - Application closed
+2025-03-29 15:12:29 - __main__ - INFO - Application starting
+2025-03-29 15:12:29 - __main__ - INFO - Initializing TallyPrimeConnectApp
+2025-03-29 15:12:29 - utils.database - INFO - Initializing database at: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-03-29 15:12:29 - utils.database - ERROR - SQLite OperationalError: duplicate column name: description. SQL: ALTER TABLE companies ADD COLUMN description TEXT...
+2025-03-29 15:12:29 - utils.database - ERROR - SQLite OperationalError: duplicate column name: is_active. SQL: ALTER TABLE companies ADD COLUMN is_active BOOLEAN DEFAULT 1 NOT NULL...
+2025-03-29 15:12:29 - utils.database - INFO - Database initialization check complete.
+2025-03-29 15:12:29 - __main__ - ERROR - Error loading logo: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\app.py", line 101, in _load_logo
+    img = Image.open(logo_path).resize(size, Image.Resampling.LANCZOS)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\.venv\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+2025-03-29 15:12:30 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:12:30 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:12:30 - __main__ - INFO - Application initialized successfully
+2025-03-29 15:12:30 - __main__ - INFO - Starting application main loop
+2025-03-29 15:12:31 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:12:37 - utils.database - INFO - Logged action: SOFT_DELETE for 100003
+2025-03-29 15:12:37 - utils.database - INFO - Company 100003 marked as inactive.
+2025-03-29 15:12:41 - utils.database - INFO - Logged action: SOFT_DELETE for 100004
+2025-03-29 15:12:41 - utils.database - INFO - Company 100004 marked as inactive.
+2025-03-29 15:12:44 - utils.database - INFO - Logged action: SOFT_DELETE for 100002
+2025-03-29 15:12:44 - utils.database - INFO - Company 100002 marked as inactive.
+2025-03-29 15:12:48 - utils.database - INFO - Logged action: SOFT_DELETE for 100001
+2025-03-29 15:12:48 - utils.database - INFO - Company 100001 marked as inactive.
+2025-03-29 15:12:52 - utils.database - INFO - Logged action: SOFT_DELETE for 10009
+2025-03-29 15:12:52 - utils.database - INFO - Company 10009 marked as inactive.
+2025-03-29 15:12:54 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:12:54 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:12:54 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:12:54 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:12:54 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:12:56 - utils.database - INFO - Reactivating company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-03-29 15:12:56 - utils.database - INFO - Logged action: REACTIVATE for 10009
+2025-03-29 15:12:58 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:12:58 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:12:58 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:12:58 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:13:00 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:13:57 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:13:57 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:13:57 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:13:57 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:13:57 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:13:58 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:13:58 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:13:58 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:13:58 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:13:58 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:13:58 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:13:59 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:14:01 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 15:14:02 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:14:03 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:14:03 - __main__ - INFO - Switching to panel: Support
+2025-03-29 15:14:05 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:14:06 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:14:06 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 15:14:07 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:14:09 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:14:09 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:09 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:09 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:09 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:09 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:14:10 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:14:10 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:10 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:10 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:10 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:12 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:14:14 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:14:14 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:14 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:14 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:14 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:15 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:14:22 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:14:22 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:22 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:22 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:22 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:43 - utils.database - INFO - Reactivating company 100004 ('Manisha').
+2025-03-29 15:14:43 - utils.database - INFO - Logged action: REACTIVATE for 100004
+2025-03-29 15:14:44 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:44 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:44 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:44 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:46 - utils.database - INFO - Reactivating company 100002 ('Tests13231').
+2025-03-29 15:14:46 - utils.database - INFO - Logged action: REACTIVATE for 100002
+2025-03-29 15:14:47 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:47 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:47 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:47 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:49 - utils.database - INFO - Reactivating company 100003 ('Dfadfadfsadfads').
+2025-03-29 15:14:49 - utils.database - INFO - Logged action: REACTIVATE for 100003
+2025-03-29 15:14:50 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:50 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:50 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:50 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:14:54 - utils.database - INFO - Reactivating company 100001 ('Unit').
+2025-03-29 15:14:54 - utils.database - INFO - Logged action: REACTIVATE for 100001
+2025-03-29 15:14:55 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:14:55 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:14:55 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:14:55 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:15:00 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:15:03 - utils.database - INFO - No changes detected for company 100003.
+2025-03-29 15:16:08 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:16:08 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:16:08 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:16:08 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:16:08 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:16:08 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:16:09 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:16:09 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:16:09 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:16:09 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:16:09 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:16:10 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:16:18 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:16:18 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:16:18 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:16:18 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:16:18 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:16:20 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:18:30 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:18:30 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:18:30 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:18:30 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:18:30 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:18:31 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:18:32 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:18:32 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:18:32 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:18:32 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:18:32 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:18:43 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:18:44 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:18:44 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:18:44 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:18:44 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:18:44 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:18:44 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:18:46 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 15:18:49 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:18:50 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:18:51 - __main__ - INFO - Switching to panel: Support
+2025-03-29 15:18:52 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:18:53 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:18:54 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 15:18:55 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:19:06 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:19:06 - __main__ - INFO - Switching to panel: Support
+2025-03-29 15:19:07 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:24:49 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:24:49 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:24:49 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:24:49 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:24:49 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:35:16 - __main__ - INFO - Application starting
+2025-03-29 15:35:16 - __main__ - INFO - Initializing TallyPrimeConnectApp
+2025-03-29 15:35:16 - utils.database - INFO - Initializing database at: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-03-29 15:35:16 - utils.database - ERROR - SQLite OperationalError: duplicate column name: description. SQL: ALTER TABLE companies ADD COLUMN description TEXT...
+2025-03-29 15:35:16 - utils.database - ERROR - SQLite OperationalError: duplicate column name: is_active. SQL: ALTER TABLE companies ADD COLUMN is_active BOOLEAN DEFAULT 1 NOT NULL...
+2025-03-29 15:35:16 - utils.database - INFO - Database initialization check complete.
+2025-03-29 15:35:17 - __main__ - ERROR - Error loading logo: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\app.py", line 101, in _load_logo
+    img = Image.open(logo_path).resize(size, Image.Resampling.LANCZOS)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\.venv\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+2025-03-29 15:35:17 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:35:17 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:35:17 - __main__ - INFO - Application initialized successfully
+2025-03-29 15:35:17 - __main__ - INFO - Starting application main loop
+2025-03-29 15:35:22 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:35:23 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:35:23 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:35:23 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:35:23 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:35:23 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:35:23 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:35:24 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 15:35:25 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:35:25 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:35:26 - __main__ - INFO - Switching to panel: Support
+2025-03-29 15:35:28 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:54:16 - __main__ - INFO - Application starting
+2025-03-29 15:54:16 - __main__ - INFO - Initializing TallyPrimeConnectApp
+2025-03-29 15:54:16 - utils.database - INFO - Initializing database at: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-03-29 15:54:16 - utils.database - ERROR - SQLite OperationalError: duplicate column name: description. SQL: ALTER TABLE companies ADD COLUMN description TEXT...
+2025-03-29 15:54:16 - utils.database - ERROR - SQLite OperationalError: duplicate column name: is_active. SQL: ALTER TABLE companies ADD COLUMN is_active BOOLEAN DEFAULT 1 NOT NULL...
+2025-03-29 15:54:16 - utils.database - INFO - Database initialization check complete.
+2025-03-29 15:54:16 - __main__ - ERROR - Error loading logo: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\app.py", line 101, in _load_logo
+    img = Image.open(logo_path).resize(size, Image.Resampling.LANCZOS)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\.venv\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+2025-03-29 15:54:17 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:54:17 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:54:17 - __main__ - INFO - Application initialized successfully
+2025-03-29 15:54:17 - __main__ - INFO - Starting application main loop
+2025-03-29 15:54:18 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:54:21 - utils.database - INFO - Logged action: SOFT_DELETE for 100003
+2025-03-29 15:54:21 - utils.database - INFO - Company 100003 marked as inactive.
+2025-03-29 15:54:24 - utils.database - INFO - Logged action: SOFT_DELETE for 100004
+2025-03-29 15:54:24 - utils.database - INFO - Company 100004 marked as inactive.
+2025-03-29 15:54:28 - utils.database - INFO - Logged action: SOFT_DELETE for 100002
+2025-03-29 15:54:28 - utils.database - INFO - Company 100002 marked as inactive.
+2025-03-29 15:54:31 - utils.database - INFO - Logged action: SOFT_DELETE for 100001
+2025-03-29 15:54:31 - utils.database - INFO - Company 100001 marked as inactive.
+2025-03-29 15:54:35 - utils.database - INFO - Logged action: SOFT_DELETE for 10009
+2025-03-29 15:54:35 - utils.database - INFO - Company 10009 marked as inactive.
+2025-03-29 15:54:38 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:54:38 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:54:38 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9000...
+2025-03-29 15:54:38 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:54:38 - utils.helpers - INFO - Successfully fetched 5 companies from Tally.
+2025-03-29 15:54:39 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:56:00 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9000...
+2025-03-29 15:56:04 - utils.helpers - WARNING - Connection check to http://localhost:9000 failed (Connection Refused/DNS Error).
+2025-03-29 15:56:18 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9000...
+2025-03-29 15:56:22 - utils.helpers - WARNING - Connection check to http://localhost:9000 failed (Connection Refused/DNS Error).
+2025-03-29 15:56:24 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9000...
+2025-03-29 15:56:29 - utils.helpers - WARNING - Connection check to http://localhost:9000 failed (Connection Refused/DNS Error).
+2025-03-29 15:57:17 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9001...
+2025-03-29 15:57:21 - utils.helpers - WARNING - Connection check to http://localhost:9001 failed (Connection Refused/DNS Error).
+2025-03-29 15:57:34 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9001...
+2025-03-29 15:57:36 - utils.helpers - INFO - Settings saved successfully.
+2025-03-29 15:57:38 - __main__ - INFO - Application closed
+2025-03-29 15:57:44 - __main__ - INFO - Application starting
+2025-03-29 15:57:44 - __main__ - INFO - Initializing TallyPrimeConnectApp
+2025-03-29 15:57:44 - utils.database - INFO - Initializing database at: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-03-29 15:57:44 - utils.database - ERROR - SQLite OperationalError: duplicate column name: description. SQL: ALTER TABLE companies ADD COLUMN description TEXT...
+2025-03-29 15:57:44 - utils.database - ERROR - SQLite OperationalError: duplicate column name: is_active. SQL: ALTER TABLE companies ADD COLUMN is_active BOOLEAN DEFAULT 1 NOT NULL...
+2025-03-29 15:57:44 - utils.database - INFO - Database initialization check complete.
+2025-03-29 15:57:44 - __main__ - ERROR - Error loading logo: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\app.py", line 101, in _load_logo
+    img = Image.open(logo_path).resize(size, Image.Resampling.LANCZOS)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\.venv\Lib\site-packages\PIL\Image.py", line 3532, in open
+    raise UnidentifiedImageError(msg)
+PIL.UnidentifiedImageError: cannot identify image file 'C:\\Users\\Vishnu\\Documents\\tally app\\Biz Analyst Tkinter Application\\TallyPrimeConnect\\assets\\logo.png'
+2025-03-29 15:57:45 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:57:45 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:57:45 - __main__ - INFO - Application initialized successfully
+2025-03-29 15:57:45 - __main__ - INFO - Starting application main loop
+2025-03-29 15:57:46 - utils.helpers - INFO - Settings saved successfully.
+2025-03-29 15:57:49 - utils.helpers - INFO - Checking Tally connection via GET at http://localhost:9001...
+2025-03-29 15:57:52 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:57:53 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:57:53 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:57:53 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 15:57:53 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:57:53 - utils.helpers - INFO - Tally responded successfully but returned no companies (or none parseable).
+2025-03-29 15:57:53 - utils.helpers - INFO - Successfully fetched 0 companies from Tally.
+2025-03-29 15:58:01 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:58:02 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:58:02 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:58:02 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 15:58:02 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:58:02 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 15:58:03 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:58:04 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:58:04 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:58:04 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 15:58:04 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:58:04 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 15:58:06 - utils.database - INFO - Reactivating company 100003 ('Dfadfadfsadfads').
+2025-03-29 15:58:06 - utils.database - INFO - Logged action: REACTIVATE for 100003
+2025-03-29 15:58:07 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:58:07 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 15:58:07 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:58:07 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 15:58:08 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 15:58:09 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 15:58:09 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 15:58:09 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 15:58:09 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 15:58:09 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 15:58:09 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 15:58:11 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 15:58:11 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 15:58:12 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 15:58:13 - __main__ - INFO - Switching to panel: Support
+2025-03-29 16:05:18 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:05:23 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 16:05:23 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 16:05:23 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 16:05:23 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 16:05:23 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 16:05:24 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 16:05:27 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:05:28 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:05:28 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 16:05:29 - __main__ - INFO - Switching to panel: Support
+2025-03-29 16:05:30 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:05:30 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 16:05:31 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 16:05:31 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 16:05:31 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 16:05:31 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 16:05:31 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 16:05:31 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:05:33 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 16:05:33 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 16:05:33 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 16:05:33 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 16:05:33 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 16:05:33 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 16:05:38 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:05:39 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:05:39 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 16:05:40 - __main__ - INFO - Switching to panel: Support
+2025-03-29 16:05:47 - __main__ - INFO - Switching to panel: Support
+2025-03-29 16:05:48 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 16:05:49 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:05:49 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 16:05:50 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:05:51 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:05:54 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:12:40 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:12:41 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:12:41 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 16:12:41 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 16:12:41 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 16:12:41 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 16:12:41 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 16:12:42 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:12:44 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 16:12:45 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 16:12:46 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:12:46 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:12:47 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 16:12:47 - __main__ - INFO - Switching to panel: Support
+2025-03-29 16:12:48 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:12:48 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:12:50 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 16:12:50 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 16:12:50 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 16:12:50 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 16:12:50 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 16:12:51 - __main__ - INFO - Switching to panel: MyCompanies
+2025-03-29 16:12:52 - __main__ - INFO - Switching to panel: AddCompany
+2025-03-29 16:12:52 - utils.helpers - INFO - Settings loaded successfully.
+2025-03-29 16:12:52 - utils.helpers - INFO - Fetching companies from Tally at http://localhost:9001...
+2025-03-29 16:12:52 - utils.helpers - WARNING - Skipping company entry due to missing name or number in XML: <COMPANY>0</COMPANY>
+    ...
+2025-03-29 16:12:52 - utils.helpers - INFO - Successfully fetched 1 companies from Tally.
+2025-03-29 16:12:53 - __main__ - INFO - Switching to panel: Settings
+2025-03-29 16:12:53 - __main__ - INFO - Switching to panel: Profile
+2025-03-29 16:12:54 - __main__ - INFO - Switching to panel: SystemInfo
+2025-03-29 16:12:55 - __main__ - INFO - Switching to panel: Tutorial
+2025-03-29 16:12:55 - __main__ - INFO - Switching to panel: Support
+2025-03-29 16:12:56 - __main__ - INFO - Switching to panel: MyCompanies
