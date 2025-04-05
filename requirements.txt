@@ -1,3 +1,4 @@
 # TallyPrimeConnect/requirements.txt
 Pillow>=9.0.0
 requests>=2.25.0
+# pyodbc>=4.0.0 # Removed
