@@ -3,7 +3,7 @@
     "disable_existing_loggers": false,
     "formatters": {
         "standard": {
-            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+            "format": "%(asctime)s - %(name)-20s - %(levelname)-8s - %(message)s",
             "datefmt": "%Y-%m-%d %H:%M:%S"
         }
     },
@@ -28,7 +28,12 @@
         "": {
             "handlers": ["console", "file"],
             "level": "DEBUG",
-            "propagate": true
+            "propagate": false
+        },
+        "utils.database": {
+             "handlers": ["console", "file"],
+             "level": "INFO",
+             "propagate": false
         },
         "requests": {
             "handlers": ["console", "file"],
@@ -38,6 +43,11 @@
          "urllib3": {
             "handlers": ["console", "file"],
             "level": "WARNING",
+            "propagate": false
+        },
+         "PIL.Image": {
+            "handlers": ["console", "file"],
+            "level": "INFO",
             "propagate": false
         }
     }

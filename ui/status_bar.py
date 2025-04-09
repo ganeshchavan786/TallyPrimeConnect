@@ -8,7 +8,8 @@ import logging
 logger = logging.getLogger(__name__)
 
 # --- Constants ---
-try: BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+try: # Define paths relative to this file's location
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 except NameError: BASE_DIR = os.path.dirname(os.getcwd())
 ASSETS_DIR = os.path.join(BASE_DIR, 'assets')
 ICONS_DIR = os.path.join(ASSETS_DIR, 'icons')
@@ -16,35 +17,37 @@ ICONS_DIR = os.path.join(ASSETS_DIR, 'icons')
 STATUS_BAR_BG = "#f0f0f0"
 STATUS_BAR_HEIGHT = 30
 TEXT_COLOR = "#333333"
-MUTED_COLOR = "#6c757d"
+MUTED_COLOR = "#6c757d" # Grayish text
 STATUS_FONT = ("Arial", 9)
 INDICATOR_FONT = ("Arial", 12)
+DEFAULT_VERSION = "v1.0.0" # Placeholder version
 
 # Status Colors
+STATUS_UNKNOWN_COLOR = "#808080" # Gray
 STATUS_CONNECTED_COLOR = "#2ecc71" # Green
 STATUS_DISCONNECTED_COLOR = "#e74c3c" # Red
 STATUS_CHECKING_COLOR = "#f39c12" # Orange
 
+
 class StatusBar(tk.Frame):
-    """Bottom status bar displaying connection, version, and progress."""
+    """Bottom status bar displaying connection, version, and internet status."""
     def __init__(self, parent, *args, **kwargs):
         """Initializes the status bar."""
         super().__init__(parent, bg=STATUS_BAR_BG, height=STATUS_BAR_HEIGHT, bd=1, relief=tk.SUNKEN, *args, **kwargs)
         self.pack_propagate(False) # Prevent resizing by content height
         self.icon_cache = {}
         self._create_widgets()
-        self.update_tally_status(connected=None) # Set initial state
+        self._set_initial_state()
         logger.debug("StatusBar initialized.")
 
     def _load_icon(self, icon_name: str, size=(16, 16)) -> ImageTk.PhotoImage | None:
-        """Loads and caches an icon PhotoImage."""
-        # ... (Implementation remains the same) ...
+        """Loads and caches an icon PhotoImage. Returns placeholder on error."""
         if icon_name in self.icon_cache: return self.icon_cache[icon_name]
         icon_path = os.path.join(ICONS_DIR, icon_name); photo_img = None
         try:
             img = Image.open(icon_path).resize(size, Image.Resampling.LANCZOS) if os.path.exists(icon_path) else Image.new('RGBA', size, (0,0,0,0))
             photo_img = ImageTk.PhotoImage(img); self.icon_cache[icon_name] = photo_img
-        except Exception as e: logger.exception(f"Err load status icon {icon_name}: {e}")
+        except Exception as e: logger.exception(f"Err load status icon {icon_name}: {e}"); return None # Return None on error
         return photo_img
 
     def _create_widgets(self):
@@ -57,17 +60,29 @@ class StatusBar(tk.Frame):
         self.tally_indicator_label = tk.Label(tally_frame, text="●", bg=self["bg"], font=INDICATOR_FONT); self.tally_indicator_label.pack(side=tk.LEFT, padx=(0, 5))
         self.tally_status_label = tk.Label(tally_frame, font=STATUS_FONT, bg=self["bg"], fg=TEXT_COLOR); self.tally_status_label.pack(side=tk.LEFT)
 
-        # --- Center Area: Sync Progress ---
-        self.sync_frame = tk.Frame(self, bg=self["bg"]); self.sync_frame.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=10, pady=pad_y)
-        self.sync_label = tk.Label(self.sync_frame, text="", font=STATUS_FONT, bg=self["bg"], fg=MUTED_COLOR); self.sync_label.pack(side=tk.LEFT, padx=(0, 5))
-        self.sync_progress = ttk.Progressbar(self.sync_frame, orient='horizontal', length=150, mode='determinate') # Defined but not packed
+
+         # --- Center Area: Sync Progress (Placeholder Frame) ---
+        # We create the frame, but content (label, progressbar) added later if needed
+        self.sync_frame = tk.Frame(self, bg=self["bg"]);
+        self.sync_frame.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=10, pady=pad_y)
+        # self.sync_label = tk.Label(self.sync_frame, ...) # Define later
+        # self.sync_progress = ttk.Progressbar(self.sync_frame, ...) # Define later
 
         # --- Right Side: Version & Internet ---
         internet_frame = tk.Frame(self, bg=self["bg"]); internet_frame.pack(side=tk.RIGHT, padx=(0, pad_x), pady=pad_y)
-        wifi_icon = self._load_icon("wifi.png");
-        if wifi_icon: icon_label = tk.Label(internet_frame, image=wifi_icon, bg=self["bg"]); icon_label.pack(side=tk.LEFT, padx=(0, 5)); icon_label.image = wifi_icon # Keep reference
-        tk.Label(internet_frame, text="Internet: CONNECTED", font=STATUS_FONT, bg=self["bg"], fg=TEXT_COLOR).pack(side=tk.LEFT) # Placeholder text
-        tk.Label(self, text="v1.1.0", font=STATUS_FONT, bg=self["bg"], fg=MUTED_COLOR).pack(side=tk.RIGHT, padx=(0, pad_x), pady=pad_y) # Version packed last
+        wifi_icon = self._load_icon("wifi.png"); # ASSUMES wifi.png exists in assets/icons
+        if wifi_icon: icon_label = tk.Label(internet_frame, image=wifi_icon, bg=self["bg"]); icon_label.pack(side=tk.LEFT, padx=(0, 5)); icon_label.image = wifi_icon
+        else: logger.warning("wifi.png icon not loaded for status bar.")
+        self.internet_status_label = tk.Label(internet_frame, text="Internet: CONNECTED", font=STATUS_FONT, bg=self["bg"], fg=TEXT_COLOR); self.internet_status_label.pack(side=tk.LEFT)
+        self.version_label = tk.Label(self, text=f"Version: {DEFAULT_VERSION}", font=STATUS_FONT, bg=self["bg"], fg=MUTED_COLOR); self.version_label.pack(side=tk.RIGHT, padx=(0, pad_x), pady=pad_y)
+
+    def _set_initial_state(self):
+        """Sets the initial text and colors for status elements."""
+        self.tally_indicator_label.config(fg=STATUS_UNKNOWN_COLOR) # Start Gray
+        self.tally_status_label.config(text="Tally: UNKNOWN")
+        # Internet status could be dynamically checked later
+        self.internet_status_label.config(text="Internet: CONNECTED") # Assume connected initially
+        self.version_label.config(text=f"Version: {DEFAULT_VERSION}")
 
     def update_tally_status(self, connected: bool | None = None, checking: bool = False):
         """Updates the Tally connection status indicator and text."""
