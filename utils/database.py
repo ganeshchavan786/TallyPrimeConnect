@@ -340,25 +340,29 @@ def init_db():
     create_tally_stockitem_batchdetails_table()
     
     # Create stock items table
-    logger.debug("Checking/Creating 'tally_stock_items' table...")
-    sql_stock_items = """CREATE TABLE IF NOT EXISTS tally_stock_items (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        tally_guid TEXT UNIQUE NOT NULL, 
-        tally_name TEXT NOT NULL, 
-        parent_name TEXT, 
-        category_name TEXT, 
-        base_units TEXT, 
-        gst_applicable TEXT, 
-        gst_type_of_supply TEXT, 
-        hsn_code TEXT, 
-        opening_balance REAL, 
-        opening_rate REAL, 
-        opening_value REAL, 
-        closing_balance REAL, 
-        closing_rate REAL, 
-        closing_value REAL, 
+   
+
+    sql_stock_items = """
+    CREATE TABLE IF NOT EXISTS tally_stock_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tally_guid TEXT UNIQUE NOT NULL,
+        tally_name TEXT NOT NULL,
+        parent_name TEXT,
+        category_name TEXT,
+        base_units TEXT,
+        gst_applicable TEXT,
+        gst_type_of_supply TEXT,
+        hsn_code TEXT,
+        opening_balance REAL,
+        opening_rate REAL,
+        opening_value REAL,
+        closing_balance REAL,
+        closing_rate REAL,
+        closing_value REAL,
         last_synced_timestamp DATETIME NOT NULL
-    )"""
+    )
+    """
+
     if _execute_db(sql_stock_items, commit=True) is None:
         logger.error("Failed create/verify 'tally_stock_items'.")
     _execute_db("CREATE INDEX IF NOT EXISTS idx_stockitem_guid ON tally_stock_items (tally_guid);", commit=True)
@@ -366,20 +370,21 @@ def init_db():
     
     # Create stock groups table
     logger.debug("Checking/Creating 'tally_stock_groups' table...")
-    sql_stock_groups = """CREATE TABLE IF NOT EXISTS tally_stock_groups (
-        id INTEGER PRIMARY KEY AUTOINCREMENT, 
-        tally_guid TEXT UNIQUE NOT NULL, 
-        tally_name TEXT NOT NULL, 
-        parent_name TEXT, 
-        is_addable BOOLEAN, 
-        master_id INTEGER, 
-        alter_id INTEGER, 
-        last_synced_timestamp DATETIME NOT NULL
-    )"""
-    if _execute_db(sql_stock_groups, commit=True) is None:
-        logger.error("Failed create/verify 'tally_stock_groups'.")
-    _execute_db("CREATE INDEX IF NOT EXISTS idx_stockgroup_guid ON tally_stock_groups (tally_guid);", commit=True)
     
+    sql_stock_groups = """
+    CREATE TABLE IF NOT EXISTS tally_stock_groups (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        tally_guid TEXT UNIQUE NOT NULL,
+        tally_name TEXT NOT NULL,
+        parent_name TEXT,
+        is_addable BOOLEAN,
+        master_id INTEGER,
+        alter_id INTEGER,
+        last_synced_timestamp DATETIME NOT NULL
+    )
+    """
+    if _execute_db(sql_stock_groups, commit=True) is None:
+        logger.error("Failed to create/verify 'tally_stock_groups'.")
     # Create units table
     logger.debug("Checking/Creating 'tally_units' table...")
     sql_units = """CREATE TABLE IF NOT EXISTS tally_units (
@@ -400,7 +405,30 @@ def init_db():
         logger.error("Failed create/verify 'tally_units'.")
     _execute_db("CREATE INDEX IF NOT EXISTS idx_unit_guid ON tally_units (tally_guid);", commit=True)
     
-    logger.info("DB schema initialization check complete.")
+    clean_orphaned_rows()
+
+    logger.info("DB schema initialization and cleanup complete.")
+
+def clean_orphaned_rows():
+    """Removes orphaned rows from child tables."""
+    logger.info("Cleaning orphaned rows from child tables...")
+    queries = [
+        # Remove orphaned rows from tally_stockitem_batchdetails
+        """
+        DELETE FROM tally_stockitem_batchdetails
+        WHERE name NOT IN (SELECT tally_guid FROM tally_stock_items)
+        """,
+        # Remove orphaned rows from tally_stockgroupwithgst
+        """
+        DELETE FROM tally_stockgroupwithgst
+        WHERE name NOT IN (SELECT tally_guid FROM tally_stock_groups)
+        """
+    ]
+    for query in queries:
+        if _execute_db(query, commit=True) is not None:
+            logger.info(f"Orphaned rows cleaned for query: {query[:50]}...")
+        else:
+            logger.error(f"Failed to clean orphaned rows for query: {query[:50]}...")
 
 # --- Logging ---
 def log_change(tally_company_number: str, action: str, details: str = ""):
@@ -603,9 +631,10 @@ def create_tally_stockgroupwithgst_table():
         is_non_gst_goods BOOLEAN,
         gst_ineligible_itc BOOLEAN,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_groups(tally_name)
+        FOREIGN KEY (name) REFERENCES tally_stock_groups(tally_guid)
     )
     """
+    
     if _execute_db(sql_create_table, commit=True) is None:
         logger.error("Failed to create/verify 'tally_stockgroupwithgst'.")
     else:
@@ -674,7 +703,7 @@ def create_tally_stockitem_gst_table():
         is_non_gst_goods BOOLEAN,
         gst_ineligible_itc BOOLEAN,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_name)
+        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_guid)
     )
     """
     if _execute_db(sql_create_table, commit=True) is None:
@@ -696,7 +725,7 @@ def create_tally_stockitem_mrp_table():
         state_name TEXT,
         mrp_rate REAL,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_name)
+        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_guid)
     )
     """
     if _execute_db(sql_create_table, commit=True) is None:
@@ -721,7 +750,7 @@ def create_tally_stockitem_bom_table():
         component_list_name TEXT,
         component_basic_qty REAL,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_name),
+        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_guid),
         FOREIGN KEY (godown_name) REFERENCES tally_godown(name)
     )
     """
@@ -743,7 +772,7 @@ def create_tally_stockitem_standardcost_table():
         date TEXT,
         rate REAL,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_name)
+        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_guid)
     )
     """
     if _execute_db(sql_create_table, commit=True) is None:
@@ -764,7 +793,7 @@ def create_tally_stockitem_standardprice_table():
         date TEXT,
         rate REAL,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_name)
+        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_guid)
     )
     """
     if _execute_db(sql_create_table, commit=True) is None:
@@ -790,7 +819,7 @@ def create_tally_stockitem_batchdetails_table():
         opening_rate REAL,
         expiry_period TEXT,
         last_synced_timestamp DATETIME NOT NULL,
-        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_name),
+        FOREIGN KEY (name) REFERENCES tally_stock_items(tally_guid),
         FOREIGN KEY (godown_name) REFERENCES tally_godown(name)
     )
     """

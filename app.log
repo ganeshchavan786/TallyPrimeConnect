@@ -11369,3 +11369,1511 @@ sqlite3.OperationalError: foreign key mismatch - "tally_stockgroupwithgst" refer
 2025-04-09 13:16:28 - ui.my_companies      - INFO     - Sync finished message received.
 2025-04-09 13:16:29 - ui.my_companies      - INFO     - Refreshing My Companies list
 2025-04-09 13:16:29 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:20:14 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:20:14 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:20:14 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:20:14 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:20:14 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:20:14 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:20:14 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:20:15 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:20:15 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:20:15 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:20:15 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:20:15 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:20:15 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:20:15 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:20:15 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:20:20 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:20:20 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:20:20 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:20:20 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:20:20 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:20:20 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:20:20 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:20:20 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:20:21 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:20:21 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:20:21 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:20:21 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items"
+2025-04-09 14:20:21 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:20:21 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:20:21 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:20:21 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:20:21 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:20:21 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:20:21 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:20:21 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:20:21 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups". SQL: INSERT OR REPLACE INTO `tally_stock_groups` (`tally_guid`, `tally_name`, `parent_name`, `is_addable`...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups"
+2025-04-09 14:20:21 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 0.
+2025-04-09 14:20:21 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:20:21 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:20:21 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:20:22 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:20:22 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:24:42 - __main__             - INFO     - Application closed
+2025-04-09 14:24:46 - __main__             - INFO     - Application starting
+2025-04-09 14:24:46 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:24:46 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:24:46 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:24:46 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items". SQL: 
+        DELETE FROM tally_stockitem_batchdetails
+        WHERE name NOT IN (SELECT tally_guid FROM ...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items"
+2025-04-09 14:24:46 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:24:46 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups". SQL: 
+        DELETE FROM tally_stockgroupwithgst
+        WHERE name NOT IN (SELECT tally_guid FROM tally...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups"
+2025-04-09 14:24:46 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:24:46 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:24:47 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:24:47 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:24:47 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:24:47 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:24:51 - ui.tally_config      - INFO     - Checking connection to localhost:9001...
+2025-04-09 14:24:51 - utils.helpers        - INFO     - Checking Tally GET at http://localhost:9001...
+2025-04-09 14:24:51 - ui.tally_config      - INFO     - Check result: True
+2025-04-09 14:24:55 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:24:55 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:24:55 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:24:55 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:24:55 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:24:56 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:24:56 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:24:56 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:24:56 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:24:56 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:24:57 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:24:57 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:24:57 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:24:57 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:24:57 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:24:57 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:24:57 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:24:57 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:24:57 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:24:57 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:24:59 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:24:59 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:24:59 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:24:59 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:24:59 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:24:59 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:24:59 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items"
+2025-04-09 14:24:59 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:24:59 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:24:59 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:25:00 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:25:00 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:25:00 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups". SQL: INSERT OR REPLACE INTO `tally_stock_groups` (`tally_guid`, `tally_name`, `parent_name`, `is_addable`...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups"
+2025-04-09 14:25:00 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 0.
+2025-04-09 14:25:00 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:25:00 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:25:00 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:25:01 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:25:01 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:25:25 - __main__             - INFO     - Application closed
+2025-04-09 14:25:43 - __main__             - INFO     - Application starting
+2025-04-09 14:25:43 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:25:43 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:25:43 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:25:43 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items". SQL: 
+        DELETE FROM tally_stockitem_batchdetails
+        WHERE name NOT IN (SELECT tally_guid FROM ...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items"
+2025-04-09 14:25:43 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:25:43 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups". SQL: 
+        DELETE FROM tally_stockgroupwithgst
+        WHERE name NOT IN (SELECT tally_guid FROM tally...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups"
+2025-04-09 14:25:43 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:25:43 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:25:43 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:25:43 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:25:43 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:25:43 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:25:45 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:25:45 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:25:45 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:25:45 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:25:45 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:25:47 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:25:47 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:25:47 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:25:47 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:25:47 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:25:47 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:25:47 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:25:47 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:25:50 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:25:51 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:25:51 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:25:51 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:25:51 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:25:51 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:25:51 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:25:51 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_batchdetails" referencing "tally_stock_items"
+2025-04-09 14:25:51 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:25:51 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:25:51 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:25:51 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:25:51 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:25:51 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups". SQL: INSERT OR REPLACE INTO `tally_stock_groups` (`tally_guid`, `tally_name`, `parent_name`, `is_addable`...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockgroupwithgst" referencing "tally_stock_groups"
+2025-04-09 14:25:51 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 0.
+2025-04-09 14:25:51 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:25:51 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:25:51 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:25:55 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:25:55 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:30:11 - __main__             - INFO     - Application closed
+2025-04-09 14:30:15 - __main__             - INFO     - Application starting
+2025-04-09 14:30:16 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:30:16 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:30:16 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:30:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:30:17 - utils.database       - ERROR    - General SQLite Error: table "tally_stock_items" has more than one primary key. SQL: CREATE TABLE IF NOT EXISTS tally_stock_items (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+       ...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table "tally_stock_items" has more than one primary key
+2025-04-09 14:30:17 - utils.database       - ERROR    - General SQLite Error: no such table: main.tally_stock_items. SQL: CREATE INDEX IF NOT EXISTS idx_stockitem_guid ON tally_stock_items (tally_guid);...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: main.tally_stock_items
+2025-04-09 14:30:17 - utils.database       - ERROR    - General SQLite Error: no such table: main.tally_stock_items. SQL: CREATE INDEX IF NOT EXISTS idx_stockitem_name ON tally_stock_items (tally_name);...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: main.tally_stock_items
+2025-04-09 14:30:17 - utils.database       - ERROR    - General SQLite Error: table "tally_stock_groups" has more than one primary key. SQL: CREATE TABLE IF NOT EXISTS tally_stock_groups (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+      ...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: table "tally_stock_groups" has more than one primary key
+2025-04-09 14:30:17 - utils.database       - ERROR    - General SQLite Error: no such table: main.tally_stock_groups. SQL: CREATE INDEX IF NOT EXISTS idx_stockgroup_guid ON tally_stock_groups (tally_guid);...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: main.tally_stock_groups
+2025-04-09 14:30:18 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:30:18 - utils.database       - ERROR    - General SQLite Error: no such table: tally_stock_items. SQL: 
+        DELETE FROM tally_stockitem_batchdetails
+        WHERE name NOT IN (SELECT tally_guid FROM ...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: tally_stock_items
+2025-04-09 14:30:18 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:30:18 - utils.database       - ERROR    - General SQLite Error: no such table: tally_stock_groups. SQL: 
+        DELETE FROM tally_stockgroupwithgst
+        WHERE name NOT IN (SELECT tally_guid FROM tally...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 57, in _execute_db
+    else: cursor.execute(sql, params)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: tally_stock_groups
+2025-04-09 14:30:18 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:30:18 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:30:18 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:30:19 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:30:19 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:30:19 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:30:20 - ui.tally_config      - INFO     - Checking connection to localhost:9001...
+2025-04-09 14:30:20 - utils.helpers        - INFO     - Checking Tally GET at http://localhost:9001...
+2025-04-09 14:30:20 - ui.tally_config      - INFO     - Check result: True
+2025-04-09 14:30:24 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:30:24 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:30:24 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:30:24 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:30:24 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:30:24 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:30:24 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:30:24 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:30:24 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:30:25 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:30:25 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:30:26 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:30:26 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:30:26 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:30:26 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:30:26 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:30:26 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:30:27 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:30:27 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:30:27 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:30:27 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:30:27 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:30:29 - ui.my_companies      - INFO     - Requesting confirm sync: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:30:31 - ui.my_companies      - INFO     - User cancelled sync for 10009.
+2025-04-09 14:30:32 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:30:32 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:30:32 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:30:32 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:30:32 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:30:32 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:30:32 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:30:32 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:30:35 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:30:35 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:30:35 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:30:35 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:30:35 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:30:35 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:30:35 - utils.database       - ERROR    - General SQLite Error: no such table: tally_stock_items. SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: tally_stock_items
+2025-04-09 14:30:35 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:30:35 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:30:35 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:30:35 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:30:35 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:30:35 - utils.database       - ERROR    - General SQLite Error: no such table: tally_stock_groups. SQL: INSERT OR REPLACE INTO `tally_stock_groups` (`tally_guid`, `tally_name`, `parent_name`, `is_addable`...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: tally_stock_groups
+2025-04-09 14:30:35 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 0.
+2025-04-09 14:30:35 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:30:35 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:30:35 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:30:37 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:30:37 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:35:25 - __main__             - INFO     - Application closed
+2025-04-09 14:37:41 - __main__             - INFO     - Application starting
+2025-04-09 14:37:41 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:37:41 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:37:41 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:37:41 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:37:42 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:37:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:37:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:37:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:37:43 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:37:43 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:37:43 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:37:43 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:37:43 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:37:43 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:37:43 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:37:43 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:37:43 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:37:46 - ui.tally_config      - INFO     - Checking connection to localhost:9001...
+2025-04-09 14:37:46 - utils.helpers        - INFO     - Checking Tally GET at http://localhost:9001...
+2025-04-09 14:37:46 - ui.tally_config      - INFO     - Check result: True
+2025-04-09 14:37:48 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:37:48 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:37:48 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:37:48 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:37:48 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:37:48 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:37:48 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:37:48 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:37:48 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:37:50 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:37:50 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:37:51 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:37:51 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:37:51 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:37:51 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:37:51 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:37:51 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:37:53 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:37:53 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:37:53 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:37:53 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:37:53 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:37:55 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:37:55 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:37:55 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:37:55 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:37:55 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:37:55 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:37:55 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:37:55 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:37:58 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:37:58 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:37:58 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:37:58 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:37:58 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:37:58 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:37:58 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_standardprice" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_standardprice" referencing "tally_stock_items"
+2025-04-09 14:37:58 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:37:58 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:37:58 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:37:58 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:37:58 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:37:58 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 14:37:58 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:37:58 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:37:58 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:38:00 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:38:00 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:42:10 - __main__             - INFO     - Application closed
+2025-04-09 14:42:15 - __main__             - INFO     - Application starting
+2025-04-09 14:42:15 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:42:15 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:42:15 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:42:16 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:42:17 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:42:17 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:42:17 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:42:17 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:42:18 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:42:18 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:42:18 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:42:18 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:42:20 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:42:20 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:42:20 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:42:20 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:42:20 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:42:20 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:42:20 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:42:20 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:42:20 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:42:22 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:42:22 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:42:23 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:42:23 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:42:23 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:42:23 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:42:23 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:42:23 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:42:24 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:42:24 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:42:24 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:42:24 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:42:24 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:42:26 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:42:26 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:42:26 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:42:26 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:42:26 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:42:26 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:42:26 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:42:26 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:42:29 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:42:29 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:42:29 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:42:29 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:42:29 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:42:29 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:42:29 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_standardcost" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_standardcost" referencing "tally_stock_items"
+2025-04-09 14:42:29 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:42:29 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:42:29 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:42:29 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:42:29 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:42:29 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 14:42:29 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:42:29 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:42:29 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:42:36 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:42:36 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:46:08 - __main__             - INFO     - Application closed
+2025-04-09 14:46:11 - __main__             - INFO     - Application starting
+2025-04-09 14:46:11 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:46:11 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:46:11 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:46:12 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:46:13 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:46:13 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:46:13 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:46:13 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:46:13 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:46:13 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:46:13 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:46:13 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:46:13 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:46:13 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:46:15 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:46:15 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:46:15 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:46:15 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:46:15 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:46:15 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:46:15 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:46:15 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:46:15 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:46:17 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:46:17 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:46:18 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:46:18 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:46:18 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:46:18 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:46:18 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:46:18 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:46:19 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:46:19 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:46:19 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:46:19 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:46:19 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:46:20 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:46:20 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:46:20 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:46:20 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:46:20 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:46:20 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:46:20 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:46:20 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:46:23 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:46:23 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:46:23 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:46:24 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:46:24 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:46:24 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:46:24 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:46:24 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_bom" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_bom" referencing "tally_stock_items"
+2025-04-09 14:46:24 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:46:24 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:46:24 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:46:24 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:46:24 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:46:24 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 14:46:24 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:46:24 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:46:24 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:46:43 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:46:43 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:48:22 - __main__             - INFO     - Application closed
+2025-04-09 14:48:26 - __main__             - INFO     - Application starting
+2025-04-09 14:48:26 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:48:26 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:48:26 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:48:27 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:48:28 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:48:28 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:48:28 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:48:28 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:48:29 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:48:29 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:48:29 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:48:29 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:48:31 - ui.tally_config      - INFO     - Checking connection to localhost:9001...
+2025-04-09 14:48:31 - utils.helpers        - INFO     - Checking Tally GET at http://localhost:9001...
+2025-04-09 14:48:31 - ui.tally_config      - INFO     - Check result: True
+2025-04-09 14:48:34 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:48:34 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:48:34 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:48:34 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:48:34 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:48:34 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:48:34 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:48:34 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:48:34 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:48:36 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:48:36 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:48:37 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:48:37 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:48:37 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:48:38 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:48:38 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:48:38 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:48:39 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:48:39 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:48:39 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:48:39 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:48:39 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:48:40 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:48:40 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:48:40 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:48:40 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:48:40 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:48:40 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:48:40 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:48:40 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:48:44 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:48:44 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:48:44 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:48:44 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:48:44 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:48:44 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:48:44 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_mrp" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_mrp" referencing "tally_stock_items"
+2025-04-09 14:48:44 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:48:44 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:48:44 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:48:44 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:48:44 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:48:44 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 14:48:44 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:48:44 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:48:44 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:49:12 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:49:12 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:50:40 - __main__             - INFO     - Application closed
+2025-04-09 14:50:42 - __main__             - INFO     - Application starting
+2025-04-09 14:50:43 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:50:43 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:50:43 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:50:43 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:50:43 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:50:43 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:50:44 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:50:44 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:50:44 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:50:44 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:50:45 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:50:45 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:50:45 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:50:45 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:50:46 - ui.tally_config      - INFO     - Checking connection to localhost:9001...
+2025-04-09 14:50:46 - utils.helpers        - INFO     - Checking Tally GET at http://localhost:9001...
+2025-04-09 14:50:46 - ui.tally_config      - INFO     - Check result: True
+2025-04-09 14:50:49 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:50:49 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:50:49 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:50:49 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:50:49 - ui.my_companies      - INFO     - No active companies found.
+2025-04-09 14:50:50 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:50:50 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:50:50 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:50:50 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:50:50 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:50:50 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:50:50 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:50:50 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:50:50 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:50:51 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:50:51 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:50:53 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:50:53 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:50:53 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:50:53 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:50:53 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:50:53 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:50:54 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:50:54 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:50:54 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:50:54 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:50:54 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:50:56 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:50:56 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:50:56 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:50:56 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:50:56 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:50:56 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:50:56 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:50:56 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:50:58 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:50:58 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:50:58 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:50:59 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:50:59 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:50:59 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:50:59 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:50:59 - utils.database       - ERROR    - General SQLite Error: foreign key mismatch - "tally_stockitem_gst" referencing "tally_stock_items". SQL: INSERT OR REPLACE INTO `tally_stock_items` (`tally_guid`, `tally_name`, `parent_name`, `category_nam...
+Traceback (most recent call last):
+  File "C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\utils\database.py", line 56, in _execute_db
+    if executemany: cursor.executemany(sql, params)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: foreign key mismatch - "tally_stockitem_gst" referencing "tally_stock_items"
+2025-04-09 14:50:59 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 0.
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:50:59 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:50:59 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:50:59 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:50:59 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:50:59 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 14:50:59 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:50:59 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:50:59 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:51:00 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:51:00 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:53:40 - __main__             - INFO     - Application closed
+2025-04-09 14:53:44 - __main__             - INFO     - Application starting
+2025-04-09 14:53:44 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:53:44 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:53:44 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:53:44 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:53:44 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:53:44 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:53:44 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:53:44 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:53:44 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:53:44 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:53:47 - ui.tally_config      - INFO     - Checking connection to localhost:9001...
+2025-04-09 14:53:47 - utils.helpers        - INFO     - Checking Tally GET at http://localhost:9001...
+2025-04-09 14:53:47 - ui.tally_config      - INFO     - Check result: True
+2025-04-09 14:53:49 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:53:49 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:53:49 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:53:49 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:53:49 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:53:49 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:53:49 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:53:49 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:53:49 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:53:52 - __main__             - INFO     - Application closed
+2025-04-09 14:54:01 - __main__             - INFO     - Application starting
+2025-04-09 14:54:01 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 14:54:01 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 14:54:01 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 14:54:02 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 14:54:03 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 14:54:03 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 14:54:03 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 14:54:04 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 14:54:04 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 14:54:04 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 14:54:04 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 14:54:04 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 14:54:04 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 14:54:04 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:54:04 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 14:54:04 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 14:54:04 - __main__             - INFO     - Starting application main loop
+2025-04-09 14:54:07 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 14:54:07 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 14:54:07 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 14:54:07 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:54:07 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:54:07 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:54:07 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:54:07 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:54:07 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 14:54:08 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:54:08 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 14:54:10 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 14:54:10 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 14:54:10 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 14:54:10 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 14:54:10 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 14:54:10 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 14:54:11 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 14:54:11 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 14:54:11 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 14:54:11 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:54:11 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 14:54:12 - ui.my_companies      - INFO     - Requesting confirm sync: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:54:13 - ui.my_companies      - INFO     - User cancelled sync for 10009.
+2025-04-09 14:54:14 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 14:54:14 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 14:54:14 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 14:54:14 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 14:54:14 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 14:54:14 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 14:54:14 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:54:14 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 14:54:18 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:54:18 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 14:54:18 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 14:54:18 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 14:54:18 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:54:18 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 14:54:18 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 56.
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 14:54:18 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 14:54:18 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 14:54:18 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 14:54:18 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 14:54:18 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 14:54:18 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 14:54:18 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 14:54:18 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 14:54:19 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 14:54:19 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 15:08:07 - __main__             - INFO     - Application closed
+2025-04-09 15:08:10 - __main__             - INFO     - Application starting
+2025-04-09 15:08:10 - __main__             - INFO     - Initializing TallyPrimeConnectApp (Stage 4 Update)
+2025-04-09 15:08:10 - utils.database       - INFO     - Initializing DB schema check: C:\Users\Vishnu\Documents\tally app\Biz Analyst Tkinter Application\TallyPrimeConnect\config\biz_analyst_data.db
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'formal_name' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'address' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'state_name' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'country_name' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'pincode' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'phone_number' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'mobile_no' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'fax_number' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'email' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'website' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'start_date' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'books_date' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'is_security_on' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'owner_name' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'is_tally_audit_on' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'is_disallow_edu' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'currency_name' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'currency_formal_name' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'is_currency_suffix' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'in_millions' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'decimal_places' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'decimal_symbol' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'decimal_places_printing' in companies.
+2025-04-09 15:08:10 - utils.database       - INFO     - Added/Verified column 'guid' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'master_id' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'alter_id' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'serial_number' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'account_id' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'site_id' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'admin_email' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'is_indian' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'is_silver' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'is_gold' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'is_licensed' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'version' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'gateway_server' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'acting_as' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'odbc_enabled' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'odbc_port' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'sync_status' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Added/Verified column 'last_sync_timestamp' in companies.
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_accounting_groups' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_ledgerbillwise' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_costcategory' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_costcenter' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_currency' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_vouchertype' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockgroupwithgst' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockcategory' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_godown' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_gst' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_mrp' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_bom' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardcost' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_standardprice' table...
+2025-04-09 15:08:11 - utils.database       - INFO     - Checking/Creating 'tally_stockitem_batchdetails' table...
+2025-04-09 15:08:12 - utils.database       - INFO     - Cleaning orphaned rows from child tables...
+2025-04-09 15:08:12 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockitem_batchdetails
+...
+2025-04-09 15:08:12 - utils.database       - INFO     - Orphaned rows cleaned for query: 
+        DELETE FROM tally_stockgroupwithgst
+     ...
+2025-04-09 15:08:12 - utils.database       - INFO     - DB schema initialization and cleanup complete.
+2025-04-09 15:08:12 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 15:08:12 - __main__             - INFO     - Switching to panel: Settings
+2025-04-09 15:08:12 - __main__             - INFO     - Application initialized successfully.
+2025-04-09 15:08:12 - __main__             - INFO     - Starting application main loop
+2025-04-09 15:08:14 - ui.sidebar           - INFO     - Sidebar item clicked: AddCompany
+2025-04-09 15:08:14 - __main__             - INFO     - Switching to panel: AddCompany
+2025-04-09 15:08:14 - __main__             - INFO     - Triggering data refresh for panel AddCompany
+2025-04-09 15:08:14 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 15:08:14 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 15:08:14 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 15:08:14 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 15:08:14 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 15:08:14 - ui.add_company       - INFO     - Found 1 companies available to add.
+2025-04-09 15:08:16 - ui.add_company       - INFO     - Attempting to add company: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 15:08:16 - utils.database       - INFO     - Adding new company 10009 ('Vrushali Infotech Pvt Ltd.').
+2025-04-09 15:08:17 - ui.add_company       - INFO     - Load companies requested for Add Company panel.
+2025-04-09 15:08:17 - utils.helpers        - INFO     - Settings loaded.
+2025-04-09 15:08:17 - utils.helpers        - INFO     - Fetching company list from http://localhost:9001...
+2025-04-09 15:08:17 - utils.helpers        - WARNING  - Skip company entry, missing name/num: <COMPANY>0</COMPANY>
+    ...
+2025-04-09 15:08:17 - utils.helpers        - INFO     - Fetched 1 companies from Tally list.
+2025-04-09 15:08:17 - ui.add_company       - INFO     - Found 0 companies available to add.
+2025-04-09 15:08:18 - ui.sidebar           - INFO     - Sidebar item clicked: MyCompanies
+2025-04-09 15:08:18 - __main__             - INFO     - Switching to panel: MyCompanies
+2025-04-09 15:08:18 - __main__             - INFO     - Triggering data refresh for panel MyCompanies
+2025-04-09 15:08:18 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 15:08:18 - ui.my_companies      - INFO     - Displaying 1 companies.
+2025-04-09 15:08:20 - ui.my_companies      - INFO     - Starting sync for all companies.
+2025-04-09 15:08:20 - ui.my_companies      - INFO     - ODBC Sync worker started for 1 companies.
+2025-04-09 15:08:20 - ui.my_companies      - INFO     - Processing 1/1: Vrushali Infotech Pvt Ltd. (10009)
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - ODBC Connect DSN: TallyODBC64_9001 (Context: 10009)
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - ODBC Connect Company Details (10009) (DSN: TallyODBC64_9001)...
+2025-04-09 15:08:20 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - Executing ODBC query for Company Details (10009)...
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - Fetched 1 rows for Company Details (10009).
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - Fetched company details for 10009.
+2025-04-09 15:08:20 - utils.database       - INFO     - Details updated OK 10009.
+2025-04-09 15:08:20 - ui.my_companies      - INFO     - Fetching additional data for Vrushali Infotech Pvt Ltd. (10009)...
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - Fetching Ledgers via ODBC...
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - ODBC Connect Ledgers (DSN: TallyODBC64_9001)...
+2025-04-09 15:08:20 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 15:08:20 - utils.odbc_helper    - INFO     - Executing ODBC query for Ledgers...
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Fetched 3796 rows for Ledgers.
+2025-04-09 15:08:23 - ui.my_companies      - INFO     - Fetched 3796 ledgers for Vrushali Infotech Pvt Ltd..
+2025-04-09 15:08:23 - utils.database       - INFO     - Bulk save: 3796 records into 'tally_ledgers'...
+2025-04-09 15:08:23 - utils.database       - INFO     - Bulk save 'tally_ledgers' OK. Processed 3796. DB Rows: 3796.
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Fetching Stock Items via ODBC...
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - ODBC Connect Stock Items (DSN: TallyODBC64_9001)...
+2025-04-09 15:08:23 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Items...
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Fetched 56 rows for Stock Items.
+2025-04-09 15:08:23 - ui.my_companies      - INFO     - Fetched 56 stock items for Vrushali Infotech Pvt Ltd..
+2025-04-09 15:08:23 - utils.database       - INFO     - Bulk save: 56 records into 'tally_stock_items'...
+2025-04-09 15:08:23 - utils.database       - INFO     - Bulk save 'tally_stock_items' OK. Processed 56. DB Rows: 56.
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Fetching Stock Groups via ODBC...
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - ODBC Connect Stock Groups (DSN: TallyODBC64_9001)...
+2025-04-09 15:08:23 - utils.odbc_helper    - WARNING  - ODBC driver does not support settimeout().
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Executing ODBC query for Stock Groups...
+2025-04-09 15:08:23 - utils.odbc_helper    - INFO     - Fetched 1 rows for Stock Groups.
+2025-04-09 15:08:23 - ui.my_companies      - INFO     - Fetched 1 stock groups for Vrushali Infotech Pvt Ltd..
+2025-04-09 15:08:23 - utils.database       - INFO     - Bulk save: 1 records into 'tally_stock_groups'...
+2025-04-09 15:08:23 - utils.database       - INFO     - Bulk save 'tally_stock_groups' OK. Processed 1. DB Rows: 1.
+2025-04-09 15:08:23 - ui.my_companies      - INFO     - Sync result 10009 (ODBC): Success
+2025-04-09 15:08:23 - ui.my_companies      - INFO     - ODBC Sync worker finished.
+2025-04-09 15:08:23 - ui.my_companies      - INFO     - Sync finished message received.
+2025-04-09 15:08:34 - ui.my_companies      - INFO     - Refreshing My Companies list
+2025-04-09 15:08:34 - ui.my_companies      - INFO     - Displaying 1 companies.
