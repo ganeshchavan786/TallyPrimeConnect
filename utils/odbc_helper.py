@@ -1,6 +1,8 @@
 import pyodbc
 import logging
 import datetime
+# In odbc_helper.py
+from utils.database.schema import COMPANY_DETAIL_COLUMNS
 
 # --- Setup Logger ---
 logger = logging.getLogger(__name__)
